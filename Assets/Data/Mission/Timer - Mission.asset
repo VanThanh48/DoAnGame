@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5bf59e1d7a42744b56763191f093aa, type: 3}
+  m_Name: Timer - Mission
+  m_EditorClassIdentifier: 
+  missionName: Race Against Time
+  missionDescription: Your scanners detected upcoming sandstorm.You have less than
+    5 minutes to reach the airplane before the conditions become untenable for a
+    safe takeoff.
+  missionDescription_VN: "M\xE1y qu\xE9t c\u1EE7a b\u1EA1n \u0111\xE3 ph\xE1t hi\u1EC7n
+    m\u1ED9t c\u01A1n b\xE3o c\xE1t s\u1EAFp t\u1EDBi. B\u1EA1n ch\u1EC9 c\xF2n ch\u01B0a
+    \u0111\u1EBFn 5 ph\xFAt \u0111\u1EC3 \u0111\u1EBFn \u0111\u01B0\u1EE3c m\xE1y
+    bay tr\u01B0\u1EDBc khi \u0111i\u1EC1u ki\u1EC7n tr\u1EDF n\xEAn kh\xF4ng th\u1EC3
+    ch\u1EA5p nh\u1EADn \u0111\u01B0\u1EE3c cho vi\u1EC7c c\u1EA5t c\xE1nh an to\xE0n."
+  time: 300

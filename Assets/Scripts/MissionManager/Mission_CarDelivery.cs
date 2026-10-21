@@ -1,0 +1,52 @@
+using Unity.VisualScripting;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Car Delivery Mission", menuName = "Missions/Car Delivery Mission")]
+public class Mission_CarDelivery : Mission
+{
+    private bool carWasDelivered;
+
+    public override void StartMission()
+    {
+        FindObjectOfType<MissionObject_CarDeliveryZone>(true).gameObject.SetActive(true);
+
+        string missionText = "Find a functional vehicle.";
+        string missionDetails = "Deliver it to the evacuation point.";
+
+        if(LocalizationManager.instance.currentLanguage == Language.EN){
+            missionText = "Find a functional vehicle.";
+            missionDetails = "Deliver it to the evacuation point.";
+        }
+        else{
+            missionText = "Tìm một phương tiện hoạt động.";
+            missionDetails = "Giao nó đến điểm caats.";
+        }
+
+        UI.instance.inGameUI.UpdateMissionInfo(missionText, missionDetails);
+
+        carWasDelivered = false;
+        MissionObject_CarToDeliver.OnCarDelivery += CarDeliveryCompleted;
+
+        Car_Controller[] cars = FindObjectsOfType<Car_Controller>();
+
+        foreach (Car_Controller car in cars)
+        {
+            car.AddComponent<MissionObject_CarToDeliver>();
+        }
+
+    }
+
+    public override bool MissionCompleted()
+    {
+        return carWasDelivered;
+    }
+
+    private void CarDeliveryCompleted()
+    {
+        carWasDelivered = true;
+        MissionObject_CarToDeliver.OnCarDelivery -= CarDeliveryCompleted;
+
+        UI.instance.inGameUI.UpdateMissionInfo("Get to the evacuation point.");
+    }
+
+}
