@@ -3,6 +3,7 @@ using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.UI;
 
+//day la tets
 public class LevelGenerator : MonoBehaviour
 {
     public static LevelGenerator instance;
